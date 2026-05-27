@@ -7,5 +7,14 @@ export default defineConfig({
   base: './',
   build: {
     outDir: 'docs'
+  },
+  css: {
+    preprocessorOptions: {
+      scss: {
+        // Suppress Sass @import deprecation warnings (course material uses legacy syntax)
+        silenceDeprecations: ['import'],
+        loadPaths: ['src']
+      }
+    }
   }
 })
